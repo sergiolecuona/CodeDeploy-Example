@@ -4,7 +4,7 @@ files:
   - source: version/version.txt
     destination: /var/www/html/version
   - source: code/
-    destination /var/www/html/version
+    destination: /var/www/html/version
   - source: scripts/
     destination: /var/www/html/scripts
 permissions:
