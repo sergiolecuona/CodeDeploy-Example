@@ -15,13 +15,20 @@ permissions:
     mode: 444
     type:
       - directory
-  - object: /var/www/html/scripts
-    pattern: "*touch*"
+  - object: /var/www/html
+    pattern: "scripts"
     owner: ubuntu
     group: ubuntu
     mode: 775
     type:
-      - directory	
+      - directory
+  - object: /var/www/html/scripts
+    pattern: "*"
+    owner: ubuntu
+    group: ubuntu
+    mode: 775
+    type:
+      - file	
 hooks:
   AfterInstall:
     - location: scripts/touchdate.sh
