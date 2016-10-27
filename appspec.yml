@@ -33,3 +33,4 @@ hooks:
   AfterInstall:
     - location: scripts/touchdate.sh
       timeout: 180s
+      runas: root
