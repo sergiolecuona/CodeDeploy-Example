@@ -1,0 +1,30 @@
+version: 1.0
+os: linux
+files:
+  - source: 		version/version.txt
+	destination:	/var/www/html/version
+  - source:			code/
+	destination		/var/www/html/version
+  -	source:			scripts/
+	destination:	/var/www/html/scripts
+permissions:
+	- object: /var/www/html
+	  pattern: "*.php"
+	  owner:	ubuntu
+	  group:	ubuntu
+	  mode 444
+	  type:
+		- directory
+	
+	- object: /var/www/html
+	  pattern: "*scripts*"
+	  owner:	ubuntu
+	  group:	ubuntu
+	  mode 775
+	  type:
+		- directory
+	
+hooks:
+   AfterInstall:
+     - location: scripts/touchdate.sh
+       timeout: 180s
