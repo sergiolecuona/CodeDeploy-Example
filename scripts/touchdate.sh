@@ -1,4 +1,3 @@
-#!/bin/bash
-
-cd /tmp
-touch $(date +"%m-%d-%Y-%M-%H").txt
+cd /var/www/html/version
+NOW=$(date +"%m-%d-%Y-%M-%H")
+touch $NOW.txt
